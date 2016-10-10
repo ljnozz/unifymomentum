@@ -1,0 +1,186 @@
+<div class="container">
+  <% if(flash && flash.err){ %>
+  <ul class="alert alert-success">
+    <% Object.keys(flash.err).forEach(function(error){ %>
+    <li> <%- JSON.stringify(flash.err[error]) %></li>
+    <% }) %>
+  </ul>
+  <% } %>
+
+  <form action="/user/create" method="POST" accept-charset="uft-8" class="form-singin">
+
+
+  <div class="row form-group">
+    <div class="text-right col-xs-3 col-sm-2 col-md-2">
+    </div>
+    <div class=" input-group col-xs-6 col-sm-8 col-md-8">
+      <input type="text" name="name" class="form-control" placeholder="name" required>
+      <span class="input-group-addon" id="basic-addon1">&nbsp&nbsp&nbsp&nbsp&nbsp&nbspname&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+    </div>
+    <div class="col-xs-3 col-sm-2 col-md-2">
+    </div>
+  </div>
+
+  <div class="row form-group">
+    <div class="text-right col-xs-3 col-sm-2 col-md-2">
+    </div>
+    <div class="input-group col-xs-6 col-sm-8 col-md-8">
+      <input type="text" name="last_name" class="form-control" placeholder="lastname" required>
+      <span class="input-group-addon" id="basic-addon1">&nbsp&nbsplastname&nbsp&nbsp&nbsp</span>
+    </div>
+    <div class="col-xs-3 col-sm-2 col-md-2">
+    </div>
+  </div>
+
+  <div class="row form-group">
+    <div class="text-right col-xs-3 col-sm-2 col-md-2">
+    </div>
+    <div class="input-group col-xs-6 col-sm-8 col-md-8">
+      <input type="text" name="username" id="usernameAjax" class="form-control" placeholder="username" required>
+      <span class="input-group-btn">
+        <button id="btnVerify" type="button" class="btn btn-warning">&nbsp&nbsp&nbsp&nbsp&nbspVerify&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+      </span>
+    </div>
+    <div class="col-xs-3 col-sm-2 col-md-2">
+      <!-- <button type="button" id="btnVerify" class="btn btn-warning">Verify</button> -->
+    </div>
+  </div>
+
+  <div class="row form-group">
+    <div class="text-right col-xs-3 col-sm-2 col-md-2">
+    </div>
+    <div class="input-group col-xs-6 col-sm-8 col-md-8">
+      <input type="email" name="email" class="form-control" placeholder="email" required>
+      <span class="input-group-addon" id="basic-addon1">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp@&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+    </div>
+    <div class="col-xs-3 col-sm-2 col-md-2">
+    </div>
+  </div>
+
+    <div class="row form-group">
+      <div class="text-right col-xs-3 col-sm-2 col-md-2">
+      </div>
+      <div class="input-group col-xs-6 col-sm-8 col-md-8">
+        <input type="password" name="password" class="form-control" placeholder="password" required>
+        <span class="input-group-addon" id="basic-addon1">&nbsp&nbsppassword&nbsp&nbsp</span>
+      </div>
+      <div class="col-xs-3 col-sm-2 col-md-2">
+      </div>
+    </div>
+
+    <div class="row form-group">
+      <div class="text-right col-xs-3 col-sm-2 col-md-2">
+      </div>
+      <div class="input-group col-xs-6 col-sm-8 col-md-8">
+        <input type="password" name="passwordConfirmation" class="form-control" placeholder="confirmación" required>
+        <span class="input-group-addon" id="basic-addon1">confirmation</span>
+      </div>
+      <div class="col-xs-3 col-sm-2 col-md-2">
+      </div>
+    </div>
+
+    <div class="row form-group">
+      <div class="text-right col-xs-3 col-sm-2 col-md-2">
+      </div>
+      <div class="nopaddingleft col-xs-6 col-sm-8 col-md-8">
+        <input id="switch-mail" type="checkbox" data-label-text="&nbsp&nbspMail&nbsp&nbsp&nbsp">
+        <input id="switch-gitlab" type="checkbox" data-label-text="&nbspGitlab&nbsp">
+      </div>
+      <div class="col-xs-3 col-sm-2 col-md-2">
+      </div>
+    </div>
+
+    <div class="row form-group">
+      <div class="text-right col-xs-3 col-sm-2 col-md-2">
+      </div>
+      <div class=" nopaddingleft col-xs-6 col-sm-8 col-md-8">
+        <input id="switch-panel" type="checkbox" data-label-text="&nbspPanel&nbsp">
+
+      </div>
+      <div class="col-xs-3 col-sm-2 col-md-2">
+      </div>
+    </div>
+
+    <div class="row form-group">
+      <div class="text-right col-xs-3 col-sm-2 col-md-2">
+      </div>
+      <div class="nopaddingleft col-xs-6 col-sm-8 col-md-8">
+        <input id="switch-seafile" type="checkbox" data-label-text="Seafile">
+        <input id="switch-rapido" type="checkbox" data-label-text="Requick">
+      </div>
+      <div class="col-xs-3 col-sm-2 col-md-2">
+      </div>
+    </div>
+
+
+
+    <!-- <div class="row form-group">
+      <div class="text-right col-xs-3 col-sm-2 col-md-2">
+      </div>
+      <div class="nopaddingleft col-xs-6 col-sm-8 col-md-8">
+
+      </div>
+      <div class="col-xs-3 col-sm-2 col-md-2">
+      </div>
+    </div> -->
+
+    <!-- -->
+    <!-- </br> -->
+
+    <div class="row form-group">
+    <div class="text-right col-xs-3 col-sm-2 col-md-2">
+    </div>
+    <div class="nopaddingleft text-left col-xs-6 col-sm-8 col-md-8">
+      <input type="submit" class="btn btn-primary"/>
+    </div>
+    <div class="col-xs-3 col-sm-2 col-md-2">
+    </div>
+    </div>
+
+  </form>
+</div>
+
+
+<script type="text/javascript" src="/js/dependencies/sails.io.js"></script>
+<script type="text/javascript">
+
+
+
+  $("#btnVerify").click(function (){
+    console.log("HOLA SOY BATA");
+    var usernameAjax = $("#usernameAjax").val();
+    $.ajax({
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    url: "/user/username",
+                    //data: "{'data1':'" + value1+ "', 'data2':'" + value2+ "', 'data3':'" + value3+ "'}",
+
+                    data: JSON.stringify({"username":usernameAjax}),
+                    dataType: "text",
+                    success: function(XMLHttpRequest, textStatus, Success) {
+                      //alert("Status: " + textStatus);
+                      if(Success.status == '200'){
+                        //alert("Username disponible");// alert("Succes: " + Success);
+                        $("#btnVerify").removeClass();//Remueve todas las clases
+                        $("#btnVerify").addClass("btn btn-success");
+                      } else {
+                        if(Success.status == '202'){
+                          //alert("Username no disponible");
+                          $("#btnVerify").removeClass();//Remueve todas las clases
+                          $("#btnVerify").addClass("btn btn-danger");
+                        }
+                      }
+
+                    //window.alert("success!!");
+                    },
+                    error: function(XMLHttpRequest, textStatus, errorThrown) {
+                      alert("Status: " + textStatus);// alert("Error: " + errorThrown);
+                    //window.alert("error!!");
+                    }
+                });
+
+  });
+
+</script>
+
+<link rel="stylesheet" href="/styles/form.css">

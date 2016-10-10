@@ -1,0 +1,29 @@
+.nopaddingleft{
+  padding-left: 0;
+}
+.navbar-inverse {
+    background-image: none
+}
+
+.navbar-inverse {
+    background-color: rgba(0,92,185,0.81);
+    border-color: rgba(0,92,185,0.81);
+}
+
+
+ body {
+     /*background-color: rgba(136,175,0,0.78);
+     /*background-color: rgba(#f2f2f2);*/*/
+     background-color: #ecf0f1;
+
+ }
+
+
+.navbar-inverse .navbar-brand {
+    color: #ffffff;
+}
+
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #ffffff;
+}
